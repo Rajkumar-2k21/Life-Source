@@ -7,31 +7,21 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
-import LoginImage from "../../../assets/login.png";
-class Login extends Component {
-  clickHandler = () => {
-    this.props.navigation.replace("Register");
-  };
-  navforgotpass = () => {
-    this.props.navigation.replace("Forgot Password");
+import ForgotImage from "../../assets/forgotpass.png";
+class ForgotPassword extends Component {
+  verifyHandling = () => {
+    this.props.navigation.replace("Reset Password");
   };
   render() {
     return (
       <View style={styles.container}>
-        <Image style={styles.image} source={LoginImage}></Image>
+        <Image style={styles.image} source={ForgotImage}></Image>
         <View style={styles.form}>
           <TextInput
             style={styles.input}
             keyboardType="email-address"
             name="EmailID"
             placeholder="Enter your email id"
-            maxLength={40}
-          ></TextInput>
-          <TextInput
-            style={styles.input}
-            keyboardType="default"
-            name="Password"
-            placeholder="Enter your password"
             maxLength={40}
           ></TextInput>
           <TouchableOpacity style={styles.button}>
@@ -43,20 +33,28 @@ class Login extends Component {
                 fontWeight: "bold",
               }}
             >
-              Login
+              Click to generate OTP
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={this.navforgotpass}>
-            <Text style={{ color: "red", marginLeft: 10, marginTop: 10 }}>
-              forgot password ?
+          <TextInput
+            style={styles.input}
+            keyboardType="email-address"
+            name="OTP"
+            placeholder="Enter the OTP"
+            maxLength={40}
+          ></TextInput>
+          <TouchableOpacity style={styles.button} onPress={this.verifyHandling}>
+            <Text
+              style={{
+                color: "white",
+                textAlign: "center",
+                fontSize: 15,
+                fontWeight: "bold",
+              }}
+            >
+              Verify
             </Text>
           </TouchableOpacity>
-          <Text style={{ color: "#ACB1B5", marginLeft: 10, marginTop: 10 }}>
-            New to LifeSource ?{" "}
-            <TouchableOpacity onPress={this.clickHandler}>
-              <Text style={{ color: "red" }}>Register</Text>
-            </TouchableOpacity>
-          </Text>
         </View>
       </View>
     );
@@ -68,8 +66,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
+  image: {
+    width: 250,
+    height: 200,
+    position: "relative",
+    left: 60,
+    top: 40,
+  },
   form: {
-    marginTop: 40,
+    marginTop: 60,
     marginLeft: 30,
   },
   input: {
@@ -84,15 +89,10 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "red",
     width: 300,
-    marginTop: 20,
-    marginLeft: 10,
+    marginTop: 15,
+    marginLeft: 14,
     padding: 8,
   },
-  image: {
-    width: 300,
-    height: 200,
-    position: "relative",
-    left: 34,
-  },
 });
-export default Login;
+
+export default ForgotPassword;
