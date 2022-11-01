@@ -8,42 +8,40 @@ import {
   TouchableOpacity,
 } from "react-native";
 import ResetPassImage from "../../assets/ResetPassword.png";
-class ResetPassword extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Image style={styles.image} source={ResetPassImage}></Image>
-        <View style={styles.form}>
-          <TextInput
-            style={styles.input}
-            keyboardType="default"
-            name="Password"
-            placeholder="New password"
-            maxLength={40}
-          ></TextInput>
-          <TextInput
-            style={styles.input}
-            keyboardType="default"
-            name="fullname"
-            placeholder="Confirm new password"
-            maxLength={40}
-          ></TextInput>
-        </View>
-        <TouchableOpacity style={styles.button}>
-          <Text
-            style={{
-              color: "white",
-              textAlign: "center",
-              fontSize: 15,
-              fontWeight: "bold",
-            }}
-          >
-            Submit
-          </Text>
-        </TouchableOpacity>
+function ResetPassword() {
+  return (
+    <View style={styles.container}>
+      <Image style={styles.image} source={ResetPassImage}></Image>
+      <View style={styles.form}>
+        <TextInput
+          style={styles.input}
+          keyboardType="default"
+          name="Password"
+          placeholder="New password"
+          maxLength={40}
+        ></TextInput>
+        <TextInput
+          style={styles.input}
+          keyboardType="default"
+          name="fullname"
+          placeholder="Confirm new password"
+          maxLength={40}
+        ></TextInput>
       </View>
-    );
-  }
+      <TouchableOpacity style={styles.button}>
+        <Text
+          style={{
+            color: "white",
+            textAlign: "center",
+            fontSize: 15,
+            fontWeight: "bold",
+          }}
+        >
+          Submit
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

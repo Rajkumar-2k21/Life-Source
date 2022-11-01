@@ -9,78 +9,78 @@ import {
   TouchableOpacity,
 } from "react-native";
 import RegisterImage from "../../../assets/login.png";
-class Register extends React.Component {
-  clickHandler = () => {
-    this.props.navigation.replace("Login");
-  };
-  render() {
-    return (
-      <View style={styles.container}>
-        <Image style={styles.image} source={RegisterImage}></Image>
 
-        <View style={styles.form}>
-          <TextInput
-            style={styles.input}
-            keyboardType="default"
-            name="fullname"
-            placeholder="Enter your full name"
-            maxLength={40}
-          ></TextInput>
-          <TextInput
-            style={styles.input}
-            keyboardType="number-pad"
-            name="Phonenumber"
-            placeholder="Enter your phone number"
-            maxLength={40}
-          ></TextInput>
-          <TextInput
-            style={styles.input}
-            keyboardType="email-address"
-            name="EmailID"
-            placeholder="Enter your email id"
-            maxLength={40}
-          ></TextInput>
-          <TextInput
-            style={styles.input}
-            keyboardType="default"
-            name="Password"
-            placeholder="Enter your password"
-            maxLength={40}
-          ></TextInput>
-          <TextInput
-            style={styles.input}
-            keyboardType="default"
-            name="fullname"
-            placeholder="Confirm password"
-            maxLength={40}
-          ></TextInput>
-          <Text style={styles.terms}>
-            By signing up, you're agree to our{" "}
-            <Text style={{ color: "red" }}>Terms & Conditions</Text>
-            and <Text style={{ color: "red" }}>Privacy Policy</Text>
+function Register({ navigation }) {
+  const clickHandler = () => {
+    navigation.replace("Login");
+  };
+
+  return (
+    <View style={styles.container}>
+      <Image style={styles.image} source={RegisterImage}></Image>
+
+      <View style={styles.form}>
+        <TextInput
+          style={styles.input}
+          keyboardType="default"
+          name="fullname"
+          placeholder="Enter your full name"
+          maxLength={40}
+        ></TextInput>
+        <TextInput
+          style={styles.input}
+          keyboardType="number-pad"
+          name="Phonenumber"
+          placeholder="Enter your phone number"
+          maxLength={40}
+        ></TextInput>
+        <TextInput
+          style={styles.input}
+          keyboardType="email-address"
+          name="EmailID"
+          placeholder="Enter your email id"
+          maxLength={40}
+        ></TextInput>
+        <TextInput
+          style={styles.input}
+          keyboardType="default"
+          name="Password"
+          placeholder="Enter your password"
+          maxLength={40}
+        ></TextInput>
+        <TextInput
+          style={styles.input}
+          keyboardType="default"
+          name="fullname"
+          placeholder="Confirm password"
+          maxLength={40}
+        ></TextInput>
+        <Text style={styles.terms}>
+          By signing up, you're agree to our{" "}
+          <Text style={{ color: "red" }}>Terms & Conditions</Text>
+          and <Text style={{ color: "red" }}>Privacy Policy</Text>
+        </Text>
+        <TouchableOpacity style={styles.button}>
+          <Text
+            style={{
+              color: "white",
+              textAlign: "center",
+              fontSize: 15,
+              fontWeight: "bold",
+            }}
+          >
+            Register
           </Text>
-          <TouchableOpacity style={styles.button}>
-            <Text
-              style={{
-                color: "white",
-                textAlign: "center",
-                fontSize: 15,
-                fontWeight: "bold",
-              }}
-            >
-              Register
-            </Text>
+        </TouchableOpacity>
+        <Text style={{ color: "#ACB1B5", marginLeft: 10, marginTop: 10 }}>
+          Joined us before ?{" "}
+          <TouchableOpacity onPress={clickHandler}>
+            <Text style={{ color: "red" }}>Login</Text>
           </TouchableOpacity>
-          <Text style={{ color: "#ACB1B5", marginLeft: 10, marginTop: 10 }}>
-            Joined us before ?{" "}
-            <TouchableOpacity onPress={this.clickHandler}>
-              <Text style={{ color: "red" }}>Login</Text>
-            </TouchableOpacity>
-          </Text>
-        </View>
+        </Text>
       </View>
-    );
-  }
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

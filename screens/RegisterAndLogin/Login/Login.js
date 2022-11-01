@@ -8,59 +8,58 @@ import {
   TouchableOpacity,
 } from "react-native";
 import LoginImage from "../../../assets/login.png";
-class Login extends Component {
-  clickHandler = () => {
-    this.props.navigation.replace("Register");
+function Login({ navigation }) {
+  const clickHandler = () => {
+    navigation.replace("Register");
   };
-  navforgotpass = () => {
-    this.props.navigation.replace("Forgot Password");
+  const navforgotpass = () => {
+    navigation.navigate("Forgot Password");
   };
-  render() {
-    return (
-      <View style={styles.container}>
-        <Image style={styles.image} source={LoginImage}></Image>
-        <View style={styles.form}>
-          <TextInput
-            style={styles.input}
-            keyboardType="email-address"
-            name="EmailID"
-            placeholder="Enter your email id"
-            maxLength={40}
-          ></TextInput>
-          <TextInput
-            style={styles.input}
-            keyboardType="default"
-            name="Password"
-            placeholder="Enter your password"
-            maxLength={40}
-          ></TextInput>
-          <TouchableOpacity style={styles.button}>
-            <Text
-              style={{
-                color: "white",
-                textAlign: "center",
-                fontSize: 15,
-                fontWeight: "bold",
-              }}
-            >
-              Login
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={this.navforgotpass}>
-            <Text style={{ color: "red", marginLeft: 10, marginTop: 10 }}>
-              forgot password ?
-            </Text>
-          </TouchableOpacity>
-          <Text style={{ color: "#ACB1B5", marginLeft: 10, marginTop: 10 }}>
-            New to LifeSource ?{" "}
-            <TouchableOpacity onPress={this.clickHandler}>
-              <Text style={{ color: "red" }}>Register</Text>
-            </TouchableOpacity>
+
+  return (
+    <View style={styles.container}>
+      <Image style={styles.image} source={LoginImage}></Image>
+      <View style={styles.form}>
+        <TextInput
+          style={styles.input}
+          keyboardType="email-address"
+          name="EmailID"
+          placeholder="Enter your email id"
+          maxLength={40}
+        ></TextInput>
+        <TextInput
+          style={styles.input}
+          keyboardType="default"
+          name="Password"
+          placeholder="Enter your password"
+          maxLength={40}
+        ></TextInput>
+        <TouchableOpacity style={styles.button}>
+          <Text
+            style={{
+              color: "white",
+              textAlign: "center",
+              fontSize: 15,
+              fontWeight: "bold",
+            }}
+          >
+            Login
           </Text>
-        </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={navforgotpass}>
+          <Text style={{ color: "red", marginLeft: 10, marginTop: 10 }}>
+            forgot password ?
+          </Text>
+        </TouchableOpacity>
+        <Text style={{ color: "#ACB1B5", marginLeft: 10, marginTop: 10 }}>
+          New to LifeSource ?{" "}
+          <TouchableOpacity onPress={clickHandler}>
+            <Text style={{ color: "red" }}>Register</Text>
+          </TouchableOpacity>
+        </Text>
       </View>
-    );
-  }
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

@@ -8,57 +8,56 @@ import {
   TouchableOpacity,
 } from "react-native";
 import ForgotImage from "../../assets/forgotpass.png";
-class ForgotPassword extends Component {
-  verifyHandling = () => {
-    this.props.navigation.replace("Reset Password");
+function ForgotPassword({ navigation }) {
+  const verifyHandling = () => {
+    navigation.navigate("Reset Password");
   };
-  render() {
-    return (
-      <View style={styles.container}>
-        <Image style={styles.image} source={ForgotImage}></Image>
-        <View style={styles.form}>
-          <TextInput
-            style={styles.input}
-            keyboardType="email-address"
-            name="EmailID"
-            placeholder="Enter your email id"
-            maxLength={40}
-          ></TextInput>
-          <TouchableOpacity style={styles.button}>
-            <Text
-              style={{
-                color: "white",
-                textAlign: "center",
-                fontSize: 15,
-                fontWeight: "bold",
-              }}
-            >
-              Click to generate OTP
-            </Text>
-          </TouchableOpacity>
-          <TextInput
-            style={styles.input}
-            keyboardType="email-address"
-            name="OTP"
-            placeholder="Enter the OTP"
-            maxLength={40}
-          ></TextInput>
-          <TouchableOpacity style={styles.button} onPress={this.verifyHandling}>
-            <Text
-              style={{
-                color: "white",
-                textAlign: "center",
-                fontSize: 15,
-                fontWeight: "bold",
-              }}
-            >
-              Verify
-            </Text>
-          </TouchableOpacity>
-        </View>
+
+  return (
+    <View style={styles.container}>
+      <Image style={styles.image} source={ForgotImage}></Image>
+      <View style={styles.form}>
+        <TextInput
+          style={styles.input}
+          keyboardType="email-address"
+          name="EmailID"
+          placeholder="Enter your email id"
+          maxLength={40}
+        ></TextInput>
+        <TouchableOpacity style={styles.button}>
+          <Text
+            style={{
+              color: "white",
+              textAlign: "center",
+              fontSize: 15,
+              fontWeight: "bold",
+            }}
+          >
+            Click to generate OTP
+          </Text>
+        </TouchableOpacity>
+        <TextInput
+          style={styles.input}
+          keyboardType="email-address"
+          name="OTP"
+          placeholder="Enter the OTP"
+          maxLength={40}
+        ></TextInput>
+        <TouchableOpacity style={styles.button} onPress={verifyHandling}>
+          <Text
+            style={{
+              color: "white",
+              textAlign: "center",
+              fontSize: 15,
+              fontWeight: "bold",
+            }}
+          >
+            Verify
+          </Text>
+        </TouchableOpacity>
       </View>
-    );
-  }
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
