@@ -15,6 +15,9 @@ function Login({ navigation }) {
   const navforgotpass = () => {
     navigation.navigate("Forgot Password");
   };
+  const NavtoMainPage = () => {
+    navigation.replace("HomePage");
+  };
 
   return (
     <View style={styles.container}>
@@ -34,7 +37,7 @@ function Login({ navigation }) {
           placeholder="Enter your password"
           maxLength={40}
         ></TextInput>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={NavtoMainPage}>
           <Text
             style={{
               color: "white",
