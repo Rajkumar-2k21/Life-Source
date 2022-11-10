@@ -15,6 +15,8 @@ import Banner2 from "../../assets/banner2.jpg";
 import Banner3 from "../../assets/banner3.jpg";
 import RequestBloodImage from "../../assets/blooddonation.png";
 
+import MainLayout from "../../layout/MainLayout";
+
 function HomeScreen() {
   return (
     <View style={styles.container}>
@@ -44,8 +46,9 @@ function HomeScreen() {
           style={{
             width: 180,
             height: 230,
-            marginLeft: 100,
-            marginBottom: 100,
+            position: "relative",
+
+            left: 100,
           }}
           source={RequestBloodImage}
         />
@@ -61,8 +64,8 @@ function HomeScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#fff",
+    marginTop: 100,
   },
   avatar: {
     width: 55,
@@ -85,6 +88,9 @@ const styles = StyleSheet.create({
     position: "relative",
     left: 20,
     top: 12,
+    backgroundColor: "white",
+    width: 200,
+    height: 100,
   },
   image: {
     width: 250,
@@ -106,7 +112,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#F24D4D",
     position: "relative",
     left: 100,
-    bottom: 100,
     borderRadius: 10,
     padding: 4,
   },
