@@ -8,10 +8,11 @@ import {
   Animated,
   Button,
 } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+
 import AvatarImage from "../../assets/avatarpng.png";
 import Banner1 from "../../assets/banner1.jpg";
 import Banner2 from "../../assets/banner2.jpg";
+import { TouchableOpacity } from "react-native";
 import Banner3 from "../../assets/banner3.jpg";
 import RequestBloodImage from "../../assets/blooddonation.png";
 

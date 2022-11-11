@@ -12,7 +12,9 @@ import BloodRequestors from "../screens/BloodRequesters/BloodRequestors";
 import Events from "../screens/EventsPage/Events";
 import MyRequests from "../screens/MyRequests/MyRequests";
 import Profile from "../screens/ProfilePage/Profile";
+import Entypo from "react-native-vector-icons/Entypo";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -45,7 +47,7 @@ const Home = ({ navigation }) => {
           headerShown: false,
           headerTitle: "Home",
           tabBarIcon: () => {
-            <Icon icon="home" />;
+            return <Entypo name="home" size={28} color="#344953" />;
           },
         }}
         component={HomeScreen}
@@ -54,22 +56,43 @@ const Home = ({ navigation }) => {
         name="BloodRequestors"
         component={BloodRequestors}
         options={{
-          headerShown: false,
+          tabBarIcon: () => {
+            return <FontAwesome5 name="child" size={28} color="#344953" />;
+          },
         }}
       ></Tab.Screen>
       <Tab.Screen
         name="Events"
         component={Events}
         options={{
-          headerShown: false,
+          tabBarIcon: () => {
+            return <MaterialIcons name="event" color="#344953" size={28} />;
+          },
         }}
       ></Tab.Screen>
-      <Tab.Screen name="MyRequests" component={MyRequests}></Tab.Screen>
+      <Tab.Screen
+        name="MyRequests"
+        component={MyRequests}
+        options={{
+          tabBarIcon: () => {
+            return (
+              <FontAwesome5
+                name="hand-holding-water"
+                size={28}
+                color="#344953"
+              />
+            );
+          },
+        }}
+      ></Tab.Screen>
+
       <Tab.Screen
         name="Profile"
         component={Profile}
         options={{
-          headerShown: false,
+          tabBarIcon: () => {
+            return <FontAwesome5 name="user-alt" size={28} color="#344953" />;
+          },
         }}
       ></Tab.Screen>
     </Tab.Navigator>
