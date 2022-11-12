@@ -15,7 +15,7 @@ import Profile from "../screens/ProfilePage/Profile";
 import Entypo from "react-native-vector-icons/Entypo";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-
+import RequestBlood from "../screens/RequestBlood/RequestBlood";
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -33,6 +33,17 @@ const AppNavigator = () => {
           component={Home}
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name="RequestBloodPage"
+          component={RequestBlood}
+          options={{
+            headerTitle: "Blood Request Form",
+            headerTitleAlign: "center",
+            headerTitleStyle: {
+              color: "red",
+            },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -44,8 +55,11 @@ const Home = ({ navigation }) => {
       <Tab.Screen
         name="Home"
         options={{
-          headerShown: false,
-          headerTitle: "Home",
+          headerTitle: "LifeSource",
+          headerTitleAlign: "center",
+          headerTitleStyle: {
+            color: "red",
+          },
           tabBarIcon: () => {
             return <Entypo name="home" size={28} color="#344953" />;
           },

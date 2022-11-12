@@ -17,8 +17,13 @@ import Banner3 from "../../assets/banner3.jpg";
 import RequestBloodImage from "../../assets/blooddonation.png";
 
 import MainLayout from "../../layout/MainLayout";
+import RequestBlood from "../RequestBlood/RequestBlood";
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
+  const RequestBloodbtnpress = () => {
+    navigation.navigate("RequestBloodPage");
+  };
+
   return (
     <View style={styles.container}>
       <View style={{ display: "flex", flexDirection: "row" }}>
@@ -55,7 +60,7 @@ function HomeScreen() {
         />
       </View>
       <View style={styles.button}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={RequestBloodbtnpress}>
           <Text style={styles.btntext}>Request Blood</Text>
         </TouchableOpacity>
       </View>
@@ -66,7 +71,6 @@ function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
-    marginTop: 100,
   },
   avatar: {
     width: 55,
